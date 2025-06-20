@@ -18,7 +18,8 @@ class Poll(ApiHandler):
         from_no = input.get("log_from", 0)
 
         # Get timezone from input (default to dotenv default or UTC if not provided)
-        timezone = input.get("timezone", get_dotenv_value("DEFAULT_USER_TIMEZONE", "UTC"))
+        # timezone = input.get("timezone", get_dotenv_value("DEFAULT_USER_TIMEZONE", "UTC"))
+        timezone = get_dotenv_value("DEFAULT_USER_TIMEZONE", "UTC")
         Localization.get().set_timezone(timezone)
 
         # context instance - get or create
